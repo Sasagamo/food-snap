@@ -1,0 +1,302 @@
+/* リセットスタイル */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ボディ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* ヘッダー */
+header {
+  background-color: #ffb273; /* ヘッダーの背景色 */
+  padding: 15px 70px; /* ヘッダー内の余白 */
+}
+
+.header__bar {
+  display: flex;
+  justify-content: space-between; /* ヘッダーの左右を均等に配置 */
+  align-items: center; /* 縦中央に配置 */
+  padding:0,20px;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.header a {
+  text-decoration: none; /* リンクの下線を消す */
+  color: white; /* リンクの文字色 */
+}
+
+.user_nav {
+  display: flex;
+  align-items: center; /* 縦中央に配置 */
+}
+
+.name-and-image {
+  display: flex;
+  align-items: center; /* 縦中央に配置 */
+  margin-right: 20px; /* 名前と画像の間隔 */
+  position: relative;
+  color:white;
+}
+
+
+
+header.header .user_nav span{
+  margin-left:10px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+header.header .user_nav span:after {
+  content: '▼';
+  font-size: .7em;
+  margin-left: -4px;
+  position: absolute;
+  left:100%;
+  top:50%;
+  transform: translateY(-50%);  
+}
+
+header.header .user_nav span:hover ul {
+  color: #eeac76;
+  display: block;
+  position:absolute;
+  top: 35px;
+  left: 0px;
+  z-index: 1000;
+}
+
+header.header .user_nav ul {
+  display: none;
+  position: absolute;
+  top: 46px;
+  right: 0;
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+header.header .user_nav ul li {
+  background-color: #f0f0f0;
+  width: 130px;
+  
+
+}
+
+header.header .user_nav ul li a {
+  padding: 10px 20px;
+  text-align: left;
+  border-bottom: 1px solid #d8d8d8;
+  color:#333;
+  display: block;
+}
+
+.avatar {
+  width: 40px; /* アバターの幅 */
+  height: 40px; /* アバターの高さ */
+  border-radius: 50%; /* 丸い形にする */
+  margin-right: 10px; /* アバターと名前の間隔 */
+}
+
+.user__info {
+  list-style: none; /* リストのスタイルを消す */
+}
+
+.user__info li {
+  margin: 5px 0; /* リスト項目の上下の間隔 */
+}
+
+.post {
+  background-color: #ffb273; /* ボタンの背景色 */
+  color: #ff6f61; /* ボタンの文字色 */
+  border: 2px solid #fdfdfd; /* ボタンのボーダー色 */
+  padding: 10px 15px; /* ボタン内の余白 */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  text-decoration: none; /* ボタンの下線を消す */
+}
+
+.post:hover {
+  background-color: #ff6f61; /* ホバー時の背景色 */
+  color: white; /* ホバー時の文字色 */
+}
+
+/* フッター */
+footer {
+  text-align: center; /* フッター内のテキストを中央揃え */
+  padding: 20px 0; /* フッターの上下の余白 */
+  background-color: #ffb273; /* フッターの背景色 */
+  color: white; /* フッターの文字色 */
+}
+
+
+
+
+
+.contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* 背景色 */
+}
+
+.container {
+  background-color: #ffffff; /* コンテナの背景色 */
+  border-radius: 8px; /* 角を丸める */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影の追加 */
+  padding: 30px; /* パディング */
+  width: 500px; /* 幅 */
+}
+
+h2 {
+  text-align: center; /* 中央揃え */
+  color: #343a40; /* 見出しの色 */
+  margin-bottom: 20px; /* 下のマージン */
+}
+
+.field,.field_bio {
+  margin-bottom: 20px; /* 各フィールドの間隔 */
+  
+}
+
+.field label {
+  font-weight: bold; /* ラベルを太字に */
+  display: block; /* ラベルをブロック要素として表示 */
+  margin-bottom: 5px; /* ラベルとフィールドの間隔 */
+}
+
+.field em {
+  font-size: 0.8em; /* 例外のテキストサイズ */
+  color: #6c757d; /* 例外のテキストカラー */
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"]{
+  width: 100%; /* 幅を100%に */
+  padding: 10px; /* パディング */
+  border: 1px solid #ced4da; /* 枠線の色 */
+  border-radius: 4px; /* 角を丸める */
+  box-sizing: border-box; /* 幅とパディングを含めたサイズ計算 */
+}
+
+.field input[type="file"] {
+  width: 100%; /* 幅を100%に */
+  padding: 10px; /* パディング */
+  border: none;
+  border-radius: 4px; /* 角を丸める */
+  box-sizing: border-box; /* 幅とパディングを含めたサイズ計算 */
+}
+
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field input[type="password"]:focus {
+  border-color: #80bdff; /* フォーカス時の枠線の色 */
+  outline: none; /* デフォルトのアウトラインを消す */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* フォーカス時の影 */
+}
+
+.field textarea {
+  width: 100%; /* 幅を100%に */
+  padding: 10px; /* パディング */
+  border: 1px solid #ced4da; /* 枠線の色 */
+  border-radius: 4px; /* 角を丸める */
+  box-sizing: border-box; /* 幅とパディングを含めたサイズ計算 */
+  min-height: 100px; /* 最小の高さを設定（必要に応じて調整） */
+  resize: none; /* リサイズを無効にする */
+}
+
+.field textarea:focus {
+  border-color: #80bdff; /* フォーカス時の枠線の色 */
+  outline: none; /* デフォルトのアウトラインを消す */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* フォーカス時の影 */
+}
+
+
+
+.field input[type="checkbox"] {
+  margin:auto; /* チェックボックスとラベルの間隔 */
+  display:block;
+  
+}
+
+
+.actions {
+  text-align: center; /* 中央揃え */
+}
+
+.actions input[type="submit"] {
+  background-color: #ffb273; /* ボタンの背景色 */
+  color: #ffffff; /* ボタンのテキスト色 */
+  border: none; /* 枠線を消す */
+  padding: 10px 20px; /* ボタンのパディング */
+  border-radius: 4px; /* 角を丸める */
+  cursor: pointer; /* カーソルをポインタに変更 */
+  transition: background-color 0.3s; /* ホバー時の遷移 */
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #ff6f61; /* ホバー時の背景色 */
+}
+
+#error_explanation{
+  background-color: #f2fafa;
+  border: 1px solid #4de4ff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-header {
+  color: #ff4d4d;
+  font-weight: bold;
+  font-size:16px;
+}
+
+.error-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.error-item {
+  color: #d63333;
+  font-size: 14px;
+}
+
+.required {
+  color: red;
+  font-size: 12px;
+}
+
+.login-flash-message {
+  margin-bottom: 20px;
+}
+
+.flash-notice {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.flash-alert {
+  background-color: #f2fafa;
+  color: #d63333;
+  padding: 10px;
+  border: 1px solid #4de4ff;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
