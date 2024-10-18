@@ -14,7 +14,7 @@ body {
 
 /* ヘッダー */
 header {
-  background-color: #ffb273; /* ヘッダーの背景色 */
+  background-color: #f7b162; /* ヘッダーの背景色 */
   padding: 15px 70px; /* ヘッダー内の余白 */
 }
 
@@ -112,13 +112,11 @@ header.header .user_nav ul li a {
   list-style: none; /* リストのスタイルを消す */
 }
 
-.user__info li {
-  margin: 5px 0; /* リスト項目の上下の間隔 */
-}
+
 
 .post {
-  background-color: #ffb273; /* ボタンの背景色 */
-  color: #ff6f61; /* ボタンの文字色 */
+  background-color: #f09116; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
   border: 2px solid #fdfdfd; /* ボタンのボーダー色 */
   padding: 10px 15px; /* ボタン内の余白 */
   border-radius: 5px; /* ボタンの角を丸くする */
@@ -134,7 +132,7 @@ header.header .user_nav ul li a {
 footer {
   text-align: center; /* フッター内のテキストを中央揃え */
   padding: 20px 0; /* フッターの上下の余白 */
-  background-color: #ffb273; /* フッターの背景色 */
+  background-color: #f7b162; /* フッターの背景色 */
   color: white; /* フッターの文字色 */
 }
 
@@ -236,7 +234,7 @@ h2 {
 }
 
 .actions input[type="submit"] {
-  background-color: #ffb273; /* ボタンの背景色 */
+  background-color: #f09116; /* ボタンの背景色 */
   color: #ffffff; /* ボタンのテキスト色 */
   border: none; /* 枠線を消す */
   padding: 10px 20px; /* ボタンのパディング */
