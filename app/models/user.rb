@@ -8,8 +8,9 @@ class User < ApplicationRecord
   has_many :ratings
 
   # Validations
-  validates :account_name, presence: true, uniqueness: true,format: { with: /\A[a-zA-Z0-9]{8,16}\z/, message: 'must be between 8 and 16 characters and contain only alphanumeric characters' }
-  validates :nickname, presence: true, length: { maximum: 10 }
+  validates :account_name, presence: true, uniqueness: true
+  validate :validate_account_name_format
+  validates :nickname, presence: true, length: { maximum: 10 }, format: { without: /\s/, message: 'cannot contain spaces' }
   validates :bio, length: { maximum: 100 } 
 
   has_one_attached :avatar
@@ -17,6 +18,17 @@ class User < ApplicationRecord
   validate :avatar_content_type
   
   private
+  def validate_account_name_format
+    if account_name.present?
+      unless account_name.match?(/\A[a-zA-Z0-9]{8,16}\z/)
+        if account_name.length < 8 || account_name.length > 16
+          errors.add(:account_name, 'must be between 8 and 16 characters')
+        else
+          errors.add(:account_name, 'can only contain alphanumeric characters')
+        end
+      end
+    end
+  end
 
   def avatar_size
     return unless avatar.attached?

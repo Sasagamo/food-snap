@@ -6,7 +6,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :email,"メールアドレスの設定<span class='required'> 必須</span>".html_safe %><br />
+        <%= f.label :email,"メールアドレスの登録<span class='required'> 必須</span>".html_safe %><br />
         <%= f.email_field :email, autofocus: true %>
       </div>
 
@@ -25,7 +25,7 @@
 
 
       <div class="field">
-        <%= f.label :nickname, "表示名の設定<span class='required'> 必須</span>".html_safe %> <em>(10文字以内)</em><br />
+        <%= f.label :nickname, "表示名の設定<span class='required'> 必須</span>".html_safe %> <em>(10文字以内、名前にスペース(空白)は使えません)</em><br />
         <%= f.text_field :nickname,maxlength: 10 %>
       </div>
 
@@ -40,7 +40,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :bio, "自己紹介の設定" %> <em>(100 characters maximum)</em><br />
+        <%= f.label :bio, "自己紹介の設定" %> <em>(最大100文字)</em><br />
         <%= f.text_area :bio,maxlength: 100 %>
       </div>
 
