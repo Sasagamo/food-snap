@@ -13,7 +13,7 @@
 <body>
     <header class="header">
       <div class="header__bar">
-        <h1><a href="/">FoodSnap</a></h1>
+        <div class="logo"><a href="/">FoodSnap</a></div>
         <% if user_signed_in? %>
           <div class="user_nav">
             <div class="name-and-image">
@@ -43,7 +43,9 @@
         <% end %>
       </div>
     </header>
+
     <%= yield %>
+
     <footer>
       <p>
         Copyright FoodSnap 2024.

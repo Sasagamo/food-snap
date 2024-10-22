@@ -118,15 +118,15 @@ RSpec.describe 'ユーザー登録', type: :model do
     end
 
     it 'アバター画像のサイズが5MBを超えると登録できない' do
-      allow(@user.avatar).to receive(:byte_size).and_return(6.megabytes)
+      @user.avatar.attach(io: File.open(Rails.root.join('spec', 'fixtures', 'files', '10MB.jpg')), filename: '10MB.jpg', content_type: 'image/jpg')
       @user.valid?
       expect(@user.errors.full_messages).to include('Avatar must be less than 5MB')
     end
 
-    it 'アバター画像がJPEG, GIF, PNG以外の形式だと登録できない' do
-      allow(@user.avatar).to receive(:content_type).and_return('image/bmp')
+    it 'アバター画像がJPEG, JPG, PNG以外の形式だと登録できない' do
+      @user.avatar.attach(io: File.open(Rails.root.join('spec', 'fixtures', 'files', 'invalid_image.gif')), filename: 'invalid_image.gif', content_type: 'image/gif')
       @user.valid?
-      expect(@user.errors.full_messages).to include('Avatar must be a JPEG, GIF, or PNG')
+      expect(@user.errors.full_messages).to include('Avatar must be a JPEG, JPG, or PNG')
     end
   end
 end

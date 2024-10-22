@@ -1,1 +1,59 @@
-<h1>見出し</h1>
+<div class="main_container">
+  <%= render 'shared/sidebar' %>
+  <main class="main-content">
+    <!-- メインコンテンツの内容 -->    
+    <div class="page-info">
+      みんなの投稿
+    </div>   
+    <% @posts.each do |post| %>
+    <div class="horison">
+      <div class="post_container">
+        <!-- ヘッダー部分: ユーザ情報と日付 -->
+        <div class="post-header">
+          <%= image_tag post.user.avatar.attached? ? post.user.avatar : 'default_avatar.png', class: "user-profile" %>
+          <div class="post-info">
+            <div class="usernames">
+              <strong class="username"><%= post.user.nickname %></strong>
+              <span class="account-name">@<%= post.user.account_name %></span>
+              <span class="post-date"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 投稿内容部分 -->
+        <%= link_to post_path(post.id) do %>
+          <div class="post-content">
+            <!-- メイン画像 -->
+            <div class="image-container">
+              <%= image_tag post.store_image.attached? ? post.store_image : 'dafault_store.png', class:"store-image" %>
+            </div>
+
+            <div class="post-text">
+              <div class="store-info">
+                <div class="post-storename"><%= post.store_name %></div> 
+                <div class="post-prefecture"><%= post.prefecture.name %></div>
+              </div>
+              <div class="post-rating">
+                <% 3.times do |i| %>
+                  <% post_rating = post.post_ratings[i] %>
+                  <div class="rating">
+                    <%= post_rating&.rating&.rating_name || "--未設定--" %>
+                  </div>
+                  <div class="score">
+                    <%= post_rating&.score || "☆☆☆☆☆" %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+      </div>
+    <% end %>
+  </main>
+  <%= link_to(new_post_path, class: 'post-btn') do %>
+  <span class='post-btn-text'>出品する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "post-btn-icon" %>
+  <% end %>
+</div>

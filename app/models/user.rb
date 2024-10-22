@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :ratings
+  has_one_attached :avatar
 
   # Validations
   validates :account_name, presence: true, uniqueness: true
@@ -13,9 +14,8 @@ class User < ApplicationRecord
   validates :nickname, presence: true, length: { maximum: 10 }, format: { without: /\s/, message: 'cannot contain spaces' }
   validates :bio, length: { maximum: 100 } 
 
-  has_one_attached :avatar
-  validate :avatar_size
-  validate :avatar_content_type
+  validates :avatar, content_type: { in: ['image/png', 'image/jpg', 'image/jpeg'], message: 'must be a JPEG, JPG, or PNG' }
+  validates :avatar, size: { less_than: 5.megabytes, message: 'must be less than 5MB' } 
   
   private
   def validate_account_name_format
@@ -30,19 +30,4 @@ class User < ApplicationRecord
     end
   end
 
-  def avatar_size
-    return unless avatar.attached?
-    
-    if avatar.byte_size > 5.megabytes
-      errors.add(:avatar, "must be less than 5MB")
-    end
-  end
-
-  def avatar_content_type
-    return unless avatar.attached?
-    
-    unless avatar.content_type.in?(%w[image/jpeg image/gif image/png])
-      errors.add(:avatar, "must be a JPEG, GIF, or PNG")
-    end
-  end
 end

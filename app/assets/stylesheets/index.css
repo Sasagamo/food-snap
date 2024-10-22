@@ -1,0 +1,33 @@
+.main_container {
+  display: flex; /* フレックスボックスを使用して横並びにする */
+}
+
+.sidebar {
+  width: 200px; /* サイドバーの幅 */
+  background-color: #f4f4f4; /* サイドバーの背景色 */
+  padding: 15px; /* サイドバーの内側の余白 */
+}
+
+.main-content {
+  flex-grow: 1; /* メインコンテンツエリアが残りのスペースを占有 */
+  padding: 15px; /* メインコンテンツの内側の余白 */
+  height:100%;
+}
+
+.page-info{
+  font-size: 30px;
+  width: 220px;
+  border: 5px solid rgb(223, 131, 11);
+  border-radius: 5%;
+  padding: 10px; /* 適切な数値を設定 */
+  margin: 5px 30px;
+  text-align: center; /* テキストを中央揃えにする */
+}
+
+
+.user-profile{
+  width: 40px; /* アバターの幅 */
+  height: 40px; /* アバターの高さ */
+  border-radius: 50%; /* 丸い形にする */
+  margin-right: 10px; /* アバターと名前の間隔 */ 
+}

@@ -1,0 +1,68 @@
+<h1>新規投稿</h1>
+
+<%= form_with model: @post , local: true, multipart: true do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+  
+  <!-- お店の外観の写真を選ぶ -->
+  <div>
+    <%= f.label :store_image, "お店の外観の写真" %>
+    <%= f.file_field :store_image %>
+  </div>
+
+  <!-- お店のジャンルを選ぶ（アクティブハッシュ） -->
+  <div>
+    <%= f.label :genre_id, "お店のジャンル" %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+  </div>
+
+  <!-- 店名を記入 -->
+  <div>
+    <%= f.label :store_name, "店名" %>
+    <%= f.text_field :store_name %>
+  </div>
+
+  <!-- お店の評価 (星グラフ) -->
+  <h3>お店の評価</h3>
+  <div>
+    <%= f.label :rating_id, "レビュー１" %>
+    <%= f.collection_select :rating_id_1, Rating.all, :id, :rating_name, prompt: "評価基準を選択" %>
+    <%= f.number_field :score_1, in: 0..5, step: 1, placeholder: "スコア" %>
+  </div>
+
+  <div>
+    <%= f.label :rating_id, "レビュー２" %>
+    <%= f.collection_select :rating_id_2, Rating.all, :id, :rating_name, prompt: "評価基準を選択" %>
+    <%= f.number_field :score_2, in: 0..5, step: 1, placeholder: "スコア" %>
+  </div>
+
+  <div>
+    <%= f.label :rating_id, "レビュー３" %>
+    <%= f.collection_select :rating_id_3, Rating.all, :id, :rating_name, prompt: "評価基準を選択" %>
+    <%= f.number_field :score_3, in: 0..5, step: 1, placeholder: "スコア" %>
+  </div>
+
+  <!-- メモ -->
+  <div>
+    <%= f.label :memo, "メモ" %>
+    <%= f.text_area :memo, rows: 5 %>
+  </div>
+
+  <!-- 投稿する料理の画像を選択する -->
+  <div>
+    <%= f.label :food_image, "料理の画像" %>
+    <%= f.file_field :food_image %>
+  </div>
+
+  <!-- 所在地を選ぶ（アクティブハッシュ） -->
+  <div>
+    <%= f.label :prefecture_id, "所在地（都道府県）" %>
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+  </div>
+
+  <!-- 投稿ボタン -->
+  <div>
+    <%= f.submit "snapを投稿する" %>
+  </div>
+
+<% end %>
