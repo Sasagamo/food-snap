@@ -17,6 +17,7 @@
 - has_many :ratings
 - has_many :followings, class_name: "Relationship", foreign_key: "follower"
 - has_many :followers, class_name: "Relationship", foreign_key: "following"
+- has_one_attached :avatar
 
 ## relationships テーブル
 
@@ -39,7 +40,7 @@ belongs_to :follower, class_name:User
 | user          | references | null: false, foreign_key: true |
 | store_name    | string     | null: false              |
 | memo          | text       |                          |
-| category_id   | integer    | null: false (ActiveHash) |
+| genre_id      | integer    | null: false (ActiveHash) |
 | prefecture_id | integer    | null: false (ActiveHash) |
 
 
@@ -49,7 +50,7 @@ belongs_to :follower, class_name:User
 - has_one :location, dependent:destroy
 - has_many :post_ratings, dependent: destroy
 - has_many :ratings, through: :post_ratings
-- belongs_to_activehash :category
+- belongs_to_active_hash :genre
 - belongs_to_active_hash :prefecture
 
 
@@ -73,7 +74,7 @@ belongs_to :follower, class_name:User
 | ------- | ---------- | ----------------- |
 | post    | references | null: false, foreign_key: true |
 | rating  | references | null: false, foreign_key: true |
-| score   | integer    | null: false, defaulo: 0 |
+| score   | integer    | null: false, default: 0 |
 
 ### Association
 

@@ -5,6 +5,17 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none; 
+  color: inherit; 
+  outline: none; 
+}
+
+a:active {
+  color: darken(color, 10%); 
+}
+
+
 /* ボディ */
 body {
   font-family: Arial, sans-serif;
@@ -22,11 +33,10 @@ header {
   display: flex;
   justify-content: space-between; /* ヘッダーの左右を均等に配置 */
   align-items: center; /* 縦中央に配置 */
-  padding:0,20px;
 }
 
-.header h1 {
-  font-size: 24px;
+.header .logo {
+  font-size: 20px;
 }
 
 .header a {
@@ -44,6 +54,7 @@ header {
   align-items: center; /* 縦中央に配置 */
   margin-right: 20px; /* 名前と画像の間隔 */
   position: relative;
+  width:172px;
   color:white;
 }
 
@@ -72,7 +83,7 @@ header.header .user_nav span:hover ul {
   position:absolute;
   top: 35px;
   left: 0px;
-  z-index: 1000;
+  z-index: 2;
 }
 
 header.header .user_nav ul {
@@ -136,165 +147,18 @@ footer {
   color: white; /* フッターの文字色 */
 }
 
-
-
-
-
-.contents {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #f8f9fa; /* 背景色 */
-}
-
-.container {
-  background-color: #ffffff; /* コンテナの背景色 */
-  border-radius: 8px; /* 角を丸める */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影の追加 */
-  padding: 30px; /* パディング */
-  width: 500px; /* 幅 */
-}
-
-h2 {
-  text-align: center; /* 中央揃え */
-  color: #343a40; /* 見出しの色 */
-  margin-bottom: 20px; /* 下のマージン */
-}
-
-.field,.field_bio {
-  margin-bottom: 20px; /* 各フィールドの間隔 */
-  
-}
-
-.field label {
-  font-weight: bold; /* ラベルを太字に */
-  display: block; /* ラベルをブロック要素として表示 */
-  margin-bottom: 5px; /* ラベルとフィールドの間隔 */
-}
-
-.field em {
-  font-size: 0.8em; /* 例外のテキストサイズ */
-  color: #6c757d; /* 例外のテキストカラー */
-}
-
-.field input[type="text"],
-.field input[type="email"],
-.field input[type="password"]{
-  width: 100%; /* 幅を100%に */
-  padding: 10px; /* パディング */
-  border: 1px solid #ced4da; /* 枠線の色 */
-  border-radius: 4px; /* 角を丸める */
-  box-sizing: border-box; /* 幅とパディングを含めたサイズ計算 */
-}
-
-.field input[type="file"] {
-  width: 100%; /* 幅を100%に */
-  padding: 10px; /* パディング */
-  border: none;
-  border-radius: 4px; /* 角を丸める */
-  box-sizing: border-box; /* 幅とパディングを含めたサイズ計算 */
-}
-
-.field input[type="text"]:focus,
-.field input[type="email"]:focus,
-.field input[type="password"]:focus {
-  border-color: #80bdff; /* フォーカス時の枠線の色 */
-  outline: none; /* デフォルトのアウトラインを消す */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* フォーカス時の影 */
-}
-
-.field textarea {
-  width: 100%; /* 幅を100%に */
-  padding: 10px; /* パディング */
-  border: 1px solid #ced4da; /* 枠線の色 */
-  border-radius: 4px; /* 角を丸める */
-  box-sizing: border-box; /* 幅とパディングを含めたサイズ計算 */
-  min-height: 100px; /* 最小の高さを設定（必要に応じて調整） */
-  resize: none; /* リサイズを無効にする */
-}
-
-.field textarea:focus {
-  border-color: #80bdff; /* フォーカス時の枠線の色 */
-  outline: none; /* デフォルトのアウトラインを消す */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* フォーカス時の影 */
+.image-container{
+  width: 300px;          /* コンテナの幅 */
+  height: 300px;         /* コンテナの高さ */
+  overflow: hidden;      /* はみ出した部分を隠す */
+  position: relative;
 }
 
 
 
-.field input[type="checkbox"] {
-  margin:auto; /* チェックボックスとラベルの間隔 */
-  display:block;
-  
-}
 
 
-.actions {
-  text-align: center; /* 中央揃え */
-}
 
-.actions input[type="submit"] {
-  background-color: #f09116; /* ボタンの背景色 */
-  color: #ffffff; /* ボタンのテキスト色 */
-  border: none; /* 枠線を消す */
-  padding: 10px 20px; /* ボタンのパディング */
-  border-radius: 4px; /* 角を丸める */
-  cursor: pointer; /* カーソルをポインタに変更 */
-  transition: background-color 0.3s; /* ホバー時の遷移 */
-}
 
-.actions input[type="submit"]:hover {
-  background-color: #ff6f61; /* ホバー時の背景色 */
-}
 
-#error_explanation{
-  background-color: #f2fafa;
-  border: 1px solid #4de4ff;
-  padding: 10px;
-  border-radius: 5px;
-}
 
-.error-header {
-  color: #ff4d4d;
-  font-weight: bold;
-  font-size:16px;
-}
-
-.error-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.error-item {
-  color: #d63333;
-  font-size: 14px;
-}
-
-.required {
-  color: red;
-  font-size: 12px;
-}
-
-.login-flash-message {
-  margin-bottom: 20px;
-}
-
-.flash-notice {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 10px;
-  border: 1px solid #c3e6cb;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.flash-alert {
-  background-color: #f2fafa;
-  color: #d63333;
-  padding: 10px;
-  border: 1px solid #4de4ff;
-  border-radius: 5px;
-  font-size: 14px;
-  margin-bottom: 10px;
-}

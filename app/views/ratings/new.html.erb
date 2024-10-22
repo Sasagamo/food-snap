@@ -1,0 +1,18 @@
+<h1>New Rating</h1>
+
+<%= form_with model: @rating, local: true do |f| %>
+<div>
+    <%= f.label :rating_name, "評価項目" %>
+    <%= f.text_field :rating_name %>
+  </div>
+
+
+
+
+
+  <!-- 他の入力フィールドをここに追加することができます -->
+
+  <div class="actions">
+    <%= f.submit "Create Rating" %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_16_034326) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_20_221208) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,15 +39,33 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_16_034326) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "post_ratings", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "rating_id", null: false
+    t.integer "score", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_ratings_on_post_id"
+    t.index ["rating_id"], name: "index_post_ratings_on_rating_id"
+  end
+
   create_table "posts", charset: "utf8mb3", force: :cascade do |t|
     t.string "store_name", null: false
     t.text "memo", null: false
-    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
     t.integer "prefecture_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "ratings", charset: "utf8mb3", force: :cascade do |t|
+    t.string "rating_name", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
@@ -67,5 +85,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_16_034326) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "post_ratings", "posts"
+  add_foreign_key "post_ratings", "ratings"
   add_foreign_key "posts", "users"
+  add_foreign_key "ratings", "users"
 end

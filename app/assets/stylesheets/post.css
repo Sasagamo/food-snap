@@ -1,0 +1,124 @@
+.horison{
+  border-top:1px solid #a7aaaa;
+}
+
+.horison:hover {
+  background-color: #dfdbd5; /* ホバー時の背景色 */
+  ; /* ホバー時の文字色 */
+}
+
+.post_container {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user-profile {
+  object-fit:cover;
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.usernames {
+  display: flex; /* ユーザーネームとアカウントネームを横並びに */
+  align-items: center; /* 縦方向の中央揃え */
+}
+
+.username {
+  font-size: 16px;
+  margin-right: 8px; /* アカウントネームとの間にスペース */
+}
+
+.account-name {
+  color: #657786;
+  font-size: 14px;
+  margin-right: 8px; /* 日付との間にスペース */
+}
+
+.post-date {
+  color: #657786;
+  font-size: 12px;
+}
+
+.post-content {
+  height:100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  cursor: pointer
+}
+
+.store-image {
+  width: 100%;           /* 画像の幅を100%に設定 */
+  height: 100%;          /* 画像の高さを100%に設定 */
+  object-fit: cover;     /* 画像を切り抜いてサイズを維持 */
+  object-position: center; 
+  z-index:0;
+}
+
+.post-rating {
+  font-size: 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.post-images {
+  display: flex;
+  gap: 10px;
+}
+
+.post-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.post-text{
+  margin-left:60px;
+}
+
+.store-info{
+  display:flex;
+  align-items:center;
+}
+
+.post-storename{
+  font-size:20px;
+  font-weight:bold;
+  margin-right:10px;
+  
+
+}
+
+.post-prefecture{
+  font-size:0.8em;
+  margin-left:5px;
+}
+
+.post-rating{
+  margin-top:20px;
+  margin-left:8px;
+}
+
+.rating{
+  font-size:16px;
+}
+
+.score{
+  font-size:20px;
+}
+
