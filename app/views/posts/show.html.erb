@@ -1,56 +1,58 @@
-<div class="main_container">
+<div class="show_main_container">
   <%= render 'shared/sidebar' %>
     <main>
-    <div class="store_image">
-      <%= image_tag @post.store_image %>
+
+        <div class="post-header">
+          <div class="user-genre">
+            <%= image_tag @post.user.avatar.attached? ? @post.user.avatar : 'default_avatar.png', class: "user-profile" %>
+            <div class="post-info">              
+              <strong class="username"><%= @post.user.nickname %></strong>
+              <span class="account-name">@<%= @post.user.account_name %></span>
+              <span class="post-date"><%= @post.created_at.strftime("%Y年%m月%d日") %></span>              
+            </div>
+          </div>          
+          <div class="post-genre">
+            <%= @post.genre.name %>
+          </div>          
+        </div>
+
+    <div class="show-store_image">
+      <%= image_tag @post.store_image.attached? ? @post.store_image : 'dafault_store.png', class:"show-store-image" %>
     </div>
 
     <h2>店名: <%= @post.store_name %></h2>
 
     <div class="rating_area">
       <div class="left_area">
-        <p>評価名: <%= @post.rating_name %></p>
-        <p>スコア: <%= @post.score %></p>
+        <div class="show-rating">
+          <% 3.times do |i| %>
+            <% post_rating = @post.post_ratings[i] %>
+            <div class="show-rating-name">
+              <%= post_rating&.rating&.rating_name || "--未設定--" %>
+            </div>
+            <div class="show-score-name">
+              <%= post_rating&.score || "☆☆☆☆☆" %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="right_area">
         <p>メモ: <%= @post.memo %></p>
       </div>
     </div>
 
-    <div class="food_images">
-      <h3>料理の写真一覧</h3>
-      <div class="food_images_gallery">
-        <% @post.food_images.each do |image| %>
-          <div class="food_image_item">
-            <%= image_tag image %>
-          </div>
-        <% end %>
-      </div>
+    <div class="show-food_images"></div>
+
+    <div class="show-google_map"></div>
+
+
     </div>
 
-    <div class="google_map">
-      <h3>地図</h3>
-      <div id="map" style="height: 400px;"></div>
-      <script>
-        // Google Mapsの初期化スクリプト
-        function initMap() {
-          var location = { lat: <%= @post.latitude %>, lng: <%= @post.longitude %> };
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: location
-          });
-          var marker = new google.maps.Marker({
-            position: location,
-            map: map
-          });
-        }
-      </script>
-    </div>
     <div class="show-prefecture"></div>
 
     </main>
   <%= link_to(new_post_path, class: 'post-btn') do %>
-  <span class='post-btn-text'>出品する</span>
+  <span class='post-btn-text'>新規投稿</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "post-btn-icon" %>
   <% end %>
 </div>
