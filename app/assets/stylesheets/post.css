@@ -16,6 +16,7 @@
 .post-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
@@ -27,15 +28,17 @@
   margin-right: 5px;
 }
 
-.post-info {
-  display: flex;
-  flex-direction: column;
+.user-genre{
+  display:flex;
 }
 
-.usernames {
-  display: flex; /* ユーザーネームとアカウントネームを横並びに */
-  align-items: center; /* 縦方向の中央揃え */
+
+
+.post-info {
+  display: flex;
+  align-items: center;
 }
+
 
 .username {
   font-size: 16px;
@@ -52,6 +55,8 @@
   color: #657786;
   font-size: 12px;
 }
+
+
 
 .post-content {
   height:100%;
