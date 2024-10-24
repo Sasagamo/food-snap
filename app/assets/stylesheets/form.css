@@ -1,0 +1,15 @@
+#store_previews {
+  display: flex;
+}
+
+.store_preview {
+  margin-right: 30px;
+}
+
+.store_preview-image{
+  height: 100px;
+  width: 100px;
+  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
+  object-fit: cover;
+}
+
