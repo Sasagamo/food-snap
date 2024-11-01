@@ -1,0 +1,63 @@
+/* new-rating-form に限定してスタイルを適用する */
+
+/* フォーム全体のスタイル */
+.new-rating-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* 各フォームグループのスタイル */
+.new-rating-form .form-group {
+  margin-bottom: 15px;
+}
+
+/* ラベルのスタイル */
+.new-rating-form .form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* テキストフィールドのスタイル */
+.new-rating-form .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.new-rating-form .form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ボタンのスタイル */
+.new-rating-form .btn-submit {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-rating-form .btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* ボタンを中央揃えにする */
+.new-rating-form .actions {
+  text-align: center;
+}

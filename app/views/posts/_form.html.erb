@@ -1,0 +1,94 @@
+<div class="post-form">
+  <%= form_with model: post, id: 'new_post', local: true, multipart: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <!-- 店名を記入 -->
+    <h3 class="post-form__title">お店の情報</h3>
+    <div class="post-form__field">
+      <%= f.label :store_name, "店名", class: "post-form__label" %>
+      <%= f.text_field :store_name, class: "post-form__input" %>
+    </div>
+
+    <!-- お店のジャンルを選ぶ（アクティブハッシュ） -->
+    <div class="post-form__field">
+      <%= f.label :genre_id, "お店のジャンル", class: "post-form__label" %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, {}, class: "post-form__select" %>
+    </div>
+
+    <!-- 所在地を選ぶ（アクティブハッシュ） -->
+    <div class="post-form__field">
+      <%= f.label :prefecture_id, "所在地（都道府県）", class: "post-form__label" %>
+      <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, class: "post-form__select" %>
+    </div>
+
+    <!-- お店の評価 (星グラフ) -->
+    <div class="post-form__rating">
+      <h3 class="post-form__title">お店の評価</h3>
+      <div class="rating_new_link">
+        <%= link_to new_rating_path do %>
+        評価基準を追加する
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="post-form__field">
+      <%= f.label :rating_id_1, "レビュー１", class: "post-form__label" %>
+      <%= f.collection_select :rating_id_1, Rating.where(user_id: current_user.id), :id, :rating_name, prompt: "評価基準を選択" %>
+      <%= f.number_field :score_1, in: 0..5, step: 1, placeholder: "スコア", class: "post-form__score" %>
+    </div>
+
+    <div class="post-form__field">
+      <%= f.label :rating_id_2, "レビュー２", class: "post-form__label" %>
+      <%= f.collection_select :rating_id_2, Rating.where(user_id: current_user.id), :id, :rating_name, prompt: "評価基準を選択" %>
+      <%= f.number_field :score_2, in: 0..5, step: 1, placeholder: "スコア", class: "post-form__score" %>
+      <div class="star_ratings">
+        <span class="star-1">☆</span><span class="star-2">☆</span><span class="star-3">☆</span><span class="star-4">☆</span><span class="star-5">☆</span>
+      </div>
+    </div>
+
+    <div class="post-form__field">
+      <%= f.label :rating_id_3, "レビュー３", class: "post-form__label" %>
+      <%= f.collection_select :rating_id_3, Rating.where(user_id: current_user.id), :id, :rating_name, prompt: "評価基準を選択" %>
+      <%= f.number_field :score_3, in: 0..5, step: 1, placeholder: "スコア", class: "post-form__score" %>
+    </div>
+
+    <!-- メモ -->
+    <div class="post-form__field">
+      <%= f.label :memo, "メモ", class: "post-form__label" %>
+      <%= f.text_area :memo, rows: 5, class: "post-form__textarea" %>
+    </div>
+
+    <!-- お店の外観の写真を選ぶ -->
+
+  <div class="post-form__image-area">
+    <%= f.label :store_image, "お店の外観の写真" %>
+    <div class="store_image-field">
+      <div id="store_previews"></div>
+    </div>
+
+    <div>
+      <%= f.file_field :store_image %>
+    </div>
+  </div>
+
+  <!-- 投稿する料理の画像を選択する -->  
+  
+  <div class="post-form__image-area">
+    <%= f.label :food_images, "料理の写真" %>
+    <div class="food_image-field">
+      <div id="food_previews"></div>
+    </div>    
+
+    <div class="click-upload">
+      <%= f.file_field :food_images, name:'post[food_images][]', data: {index: 0} %>
+    </div>
+  </div>
+
+    <!-- 投稿ボタン -->
+    <div class="post-form__field">
+      <%= f.submit "snapを投稿する", class: "post-form__submit" %>
+    </div>
+
+  <% end %>
+</div>

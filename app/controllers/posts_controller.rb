@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    binding.pry
     @post = Post.new(post_params)
     if @post.save
       create_post_ratings(@post)
@@ -22,9 +24,20 @@ class PostsController < ApplicationController
     @post =Post.find(params[:id])
   end
 
+  def edit
+    @post =Post.find(params[:id])
+    rating_id_1:post.rating
+  end
+
+  def destroy
+    @post =Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
+  end
+
   private
   def post_params
-    params.require(:post).permit(:store_image, :store_name, :memo, :genre_id, :prefecture_id, :food_image).merge(user_id:current_user.id)
+    params.require(:post).permit(:store_image, :store_name, :memo, :genre_id, :prefecture_id, {food_images: []}).merge(user_id:current_user.id)
   end
 
   def create_post_ratings(post)

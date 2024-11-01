@@ -1,5 +1,8 @@
+/* 新規投稿 */
+
 .post-btn {
-  width: 120px;
+  width: 100px;
+  height:100px;
   background: #f09116;
   text-align: center;
   border-radius: 4%;
@@ -12,11 +15,13 @@
 .post-btn-text {
   color: #fff;
   display: block;
-  font-size: 18px;
+  font-size: 14px;
   text-decoration: none;
   margin-bottom: 5px;
 }
 
 .post-btn-icon {
   width: 60%;
+  height:60%;
 }
+
