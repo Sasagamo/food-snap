@@ -30,9 +30,32 @@
             <div class="show-rating-name">
               <%= post_rating&.rating&.rating_name || "--未設定--" %>
             </div>
-            <div class="show-score-name">
-              <%= post_rating&.score || "☆☆☆☆☆" %>
-            </div>
+
+              <%# 後で切り出す %>
+              <div class="score post-show-score">
+                <% if post_rating&.score %>
+                  <% case post_rating.score %>
+                    <% when 1 %>
+                      ★☆☆☆☆
+                    <% when 2 %>
+                      ★★☆☆☆
+                    <% when 3 %>
+                      ★★★☆☆
+                    <% when 4 %>
+                      ★★★★☆
+                    <% when 5 %>
+                      ★★★★★
+                    <% else %>
+                      ☆☆☆☆☆
+                  <% end %>
+                <% else %>
+                  ☆☆☆☆☆
+                <% end %>
+              </div>
+            <%# 後で切り出す %>
+
+
+            
           <% end %>
         </div>
       </div>
@@ -41,12 +64,14 @@
       </div>
     </div>
 
-    <div class="show-food_images"></div>
-
-    <div class="show-google_map"></div>
-
-
+    <div class="show-food_images_area">
+      <div class="other-images">
+        <% @post.food_images[0..-1].each do |image| %>          
+            <%= image_tag image, class: "show-food_images" %>
+        <%end%>
+      </div>
     </div>
+
 
     <div class="show-prefecture"></div>
 
@@ -56,3 +81,17 @@
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "post-btn-icon" %>
   <% end %>
 </div>
+
+<script>
+  document.addEventListener('turbo:load', function() {
+    const imageContainer = document.querySelector('.other-images'); // クラス名で要素を取得
+
+    if (!imageContainer) return null;
+
+    imageContainer.addEventListener('wheel', function(e) {
+      e.preventDefault(); // デフォルトのスクロール動作を防止
+      imageContainer.scrollLeft += e.deltaY; // 縦のスクロール量を横に適用
+    });
+  });
+    
+</script>

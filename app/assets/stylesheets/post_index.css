@@ -22,12 +22,19 @@
   padding: 10px; /* 適切な数値を設定 */
   margin: 5px 30px;
   text-align: center; /* テキストを中央揃えにする */
+  height: fit-content;
 }
 
 
-.user-profile{
-  width: 40px; /* アバターの幅 */
-  height: 40px; /* アバターの高さ */
-  border-radius: 50%; /* 丸い形にする */
-  margin-right: 10px; /* アバターと名前の間隔 */ 
+.titlebar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchbar{
+  margin-bottom:10px;
+}
+
+.score{
+  color:orange;
 }

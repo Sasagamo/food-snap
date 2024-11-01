@@ -77,10 +77,12 @@ h2 {
 .left_area {
   flex: 1; /* 左側をフレックスアイテムとして伸ばす */
   margin-right: 20px; /* 右側との余白 */
+  margin-left: 30px;
 }
 
 .right_area {
   flex: 1; /* 右側をフレックスアイテムとして伸ばす */
+  margin-right:30px;
 }
 
 /* 評価のスタイル */
@@ -109,7 +111,6 @@ h2 {
 /* 食品画像のスタイル */
 .show-food_images {
   display: flex; /* フレックスボックス */
-  flex-wrap: wrap; /* 折り返し */
   gap: 10px; /* アイテム間の隙間 */
 }
 
@@ -125,4 +126,23 @@ h2 {
   margin-top: 20px; /* 上の余白 */
   font-size: 16px; /* フォントサイズ */
   color: #666; /* 色 */
+}
+
+.show-food_images{
+  width: 300px; /* 画像の最大幅を150pxに制限 */
+  max-height: 300px; /* 画像の最大高さを100pxに制限 */
+  height: auto; /* 高さは自動調整 */
+  display: inline-block; /* 画像をインラインブロック要素として表示 */
+}
+
+.other-images{
+  width: 100%; /* 親要素の幅 */
+  overflow-x: auto; /* 横方向にオーバーフローが発生した場合、スクロールバーを表示 */
+  white-space: nowrap; /* 画像を横に並べるために必要 */
+  cursor: grab; /* マウスカーソルを変更 */
+
+}
+
+.post-show-score{
+  font-size: 30px;
 }

@@ -4,11 +4,11 @@ class Post < ApplicationRecord
   has_many :post_ratings
   has_many :ratings, through: :post_ratings
   has_one_attached :store_image
-  has_many_attached :food_image
+  has_many_attached :food_images
 
   validates :store_name, presence: true
   validates :store_image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 5.megabytes } 
-  validates :food_image,  content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 3.megabytes }
+  validates :food_images,  content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 3.megabytes }
 
   validate :validate_post_ratings
 

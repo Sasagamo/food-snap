@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
   def create
     
     if @rating = Rating.create(rating_params)
-      redirect_to root_path
+      redirect_to new_post_path
     else
       render :new,status: :unprocessable_entitiy
     end

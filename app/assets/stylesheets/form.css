@@ -13,3 +13,136 @@
   object-fit: cover;
 }
 
+.food_preview-image{
+  height: 100px;
+  width: 100px;
+  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
+  object-fit: cover;
+}
+
+.post-form {
+  background-color: #ffffff; /* 背景色 */
+  padding: 20px; /* パディング */
+  border-radius: 8px; /* 角丸 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* シャドウ効果 */
+  max-width: 800px;
+  margin:0 auto;
+  
+}
+
+.post-form__title {
+  font-size: 1.5em; /* タイトルのフォントサイズ */
+  margin-bottom: 15px; /* タイトル下のマージン */
+}
+
+.post-form__field {
+  margin-bottom: 15px; /* フィールド間のマージン */
+  align-items:center;
+}
+
+.post-form__label {
+  display: block; /* ブロック要素として表示 */
+  font-weight: bold; /* 太字 */
+  color: #333; /* 文字色 */
+  white-space: nowrap;
+}
+
+.post-form__input,
+.post-form__textarea{
+  width: 100%; /* 幅を100%に設定 */
+  padding: 10px; /* パディング */
+  border: 1px solid #ccc; /* 枠線 */
+  border-radius: 4px; /* 角丸 */
+  font-size: 1em; /* フォントサイズ */
+}
+
+.post-form__select{
+  font-size:1em;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+
+}
+
+
+/*  評価関連 */
+
+#post_rating_id_1,
+#post_rating_id_2,
+#post_rating_id_3{
+  padding:3px;
+  border: 1px solid #ccc;
+  font-size:1em;
+}
+
+.post-form__score{
+  display:none;
+}
+
+
+
+.post-form__textarea {
+  resize: vertical; /* 縦方向にリサイズ可能 */
+}
+
+.post-form__submit {
+  background-color: #28a745; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* 枠線なし */
+  padding: 10px 15px; /* パディング */
+  border-radius: 5px; /* 角丸 */
+  cursor: pointer; /* カーソルをポインターに */
+  font-size: 1em; /* フォントサイズ */
+}
+
+.post-form__submit:hover {
+  background-color: #218838; /* ホバー時の背景色 */
+}
+
+.food_image-delete-button {
+  text-align: center;
+  border: solid 1px;
+  cursor: pointer;
+  width:100px;
+}
+.food_preview{
+  width:100px;
+  margin:20px;
+}
+#food_previews{
+  display:flex;
+  flex-wrap: wrap;
+
+}
+
+.post-form__image-area label {
+  display: block; /* ラベルをブロック要素として表示 */
+  margin-bottom: 5px; /* ラベル下のマージン */
+  font-weight: bold; /* 太字 */
+  color: #333; /* 文字色 */
+  font-family: Arial, sans-serif; /* フォントファミリーをArialに設定 */
+}
+
+.post-form__image-area{
+  margin-bottom: 10px;
+}
+
+.post-form__rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating_new_link{
+  background-color: #f09116; /* ボタンの背景色 */
+  color: #ffffff; /* ボタンのテキスト色 */
+  border: none; /* 枠線を消す */
+  padding: 10px 20px; /* ボタンのパディング */
+  border-radius: 4px; /* 角を丸める */
+  cursor: pointer; /* カーソルをポインタに変更 */
+  transition: background-color 0.3s; 
+}
+
+.post-form__title{
+margin-left: 320px;
+}

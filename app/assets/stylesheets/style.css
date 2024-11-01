@@ -113,10 +113,11 @@ header.header .user_nav ul li a {
 }
 
 .avatar {
-  width: 40px; /* アバターの幅 */
-  height: 40px; /* アバターの高さ */
-  border-radius: 50%; /* 丸い形にする */
-  margin-right: 10px; /* アバターと名前の間隔 */
+    object-fit:cover;
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
 }
 
 .user__info {
