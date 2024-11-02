@@ -100,11 +100,6 @@
   margin-left:60px;
 }
 
-.store-info{
-  display:flex;
-  align-items:center;
-}
-
 .post-storename{
   font-size:20px;
   font-weight:bold;
@@ -132,30 +127,34 @@
 }
 
 
-.post-detail{
-  height:1.5em;
-  float:right;
-  margin-top: 5px;
-  cursor:pointer;
-  display:none;
-}
-
 .post-detail-options {
-  display:none;
   list-style:none;
-  float:right;
   z-index: 2;
+  width:50px;
+  text-align: center;
+  float:right;
 }
 
 .post-detail-options li{
-  padding:8px 15px;  
-  border: 1px solid #d8d8d8;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
-  font-size:0.9em;
-  background-color: #f0f0f0;
+
+  font-size:0.8em;
   cursor:pointer;
 }
 
 .post-detail-options li:hover{
-  background-color: #bbbbbb;
+  text-decoration: underline;
+}
+
+.post-detail:hover + .post-detail-options{
+  display:block;
+}
+
+.prefecture{
+  color:green;
+  font-weight: bold;
+}
+
+.genre{
+  color:red;
+  font-weight: bold;
 }

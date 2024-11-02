@@ -1,10 +1,12 @@
 class Post < ApplicationRecord
 
   belongs_to :user
-  has_many :post_ratings
+  has_many :post_ratings, dependent: :destroy
   has_many :ratings, through: :post_ratings
   has_one_attached :store_image
   has_many_attached :food_images
+
+  attr_accessor :rating_id_1, :score_1, :rating_id_2, :score_2, :rating_id_3, :score_3
 
   validates :store_name, presence: true
   validates :store_image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 5.megabytes } 
