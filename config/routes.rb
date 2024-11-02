@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root "posts#index"
   resources :ratings,only:[:new,:create,:edit]
 
-  resources :posts, only:[:new,:create, :show,:edit,:destroy] 
+  resources :posts, only:[:new,:create, :show,:edit,:destroy,:update] 
   
 end

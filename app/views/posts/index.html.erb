@@ -24,7 +24,6 @@
 
     <% @posts.each do |post| %>
     <div class="horison">
-      <%= image_tag "post-detail",class: "post-detail" %>
         <ul class="post-detail-options">
           <li><%= link_to '詳細', post_path(post.id) %></li>
           <% if user_signed_in? && current_user.id == post.user_id %>
@@ -45,7 +44,7 @@
             </div>
           </div>          
           <div class="post-genre">
-            <%= post.genre.name %>
+            <span class="prefecture"><%= post.prefecture.name %></span> <%= " の " %> <span class="genre"><%= post.genre.name %></span>
           </div>          
         </div>        
         <!-- 投稿内容部分 -->
@@ -57,10 +56,9 @@
             </div>
 
             <div class="post-text">
-              <div class="store-info">
-                <div class="post-storename"><%= post.store_name %></div> 
-                <div class="post-prefecture"><%= post.prefecture.name %></div>
-              </div>
+              <div class="post-storename">
+                <%= post.store_name %>
+              </div> 
 
               <%# 後で切り出す %>
               <div class="post-rating">
@@ -110,29 +108,3 @@
   <% end %>
 </div>
 
-<script>
-document.addEventListener("turbo:load", function() {
-  const postDetails = document.querySelectorAll(".post-detail");
-  const horisons = document.querySelectorAll(".horison");
-
-  horisons.forEach((horison) => {
-    const postDetail = horison.querySelector(".post-detail");
-    const postDetailOptions = postDetail.nextElementSibling;
-
-    // clickイベントリスナーを設定
-    postDetail.addEventListener("click", function() {
-      if (postDetailOptions.style.display === "block") {
-        postDetailOptions.style.display = "none";
-      } else {
-        postDetailOptions.style.display = "block";
-      }
-    });
-
-    // mouseleaveイベントリスナーを設定
-    horison.addEventListener("mouseleave", function() {
-      postDetailOptions.style.display = "none";
-    });
-  });
-});
-
-</script>
