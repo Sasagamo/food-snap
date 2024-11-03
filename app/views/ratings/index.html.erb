@@ -8,7 +8,7 @@
   <!-- 新規作成用フォーム -->
   <h3 class="form__title">項目を作成する</h3>
   <%= form_with model: @rating, url: ratings_path, local: true, class: "new_rating_form" do |f| %>
-    <%= f.text_field :rating_name %>
+    <%= f.text_field :rating_name, placeholder:"新規項目名を入力する" %>
     <%= f.submit "Create Rating" %>
   <% end %>
 
