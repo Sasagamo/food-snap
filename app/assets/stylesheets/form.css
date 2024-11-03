@@ -123,22 +123,19 @@
   margin-bottom: 10px;
 }
 
-.post-form__rating{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.rating_new_link {
+  margin-top: 30px;
+
 }
 
-.rating_new_link{
-  background-color: #f09116; /* ボタンの背景色 */
-  color: #ffffff; /* ボタンのテキスト色 */
-  border: none; /* 枠線を消す */
-  padding: 10px 20px; /* ボタンのパディング */
-  border-radius: 4px; /* 角を丸める */
-  cursor: pointer; /* カーソルをポインタに変更 */
-  transition: background-color 0.3s; 
+.rating_new_link:hover {
+  text-decoration: underline;
 }
 
-.post-form__title{
-margin-left: 320px;
+
+.form__title{
+text-align: center;
+margin-top:10px;
+font-size: 1.6em;
 }

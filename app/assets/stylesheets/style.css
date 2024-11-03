@@ -100,8 +100,6 @@ header.header .user_nav ul {
 header.header .user_nav ul li {
   background-color: #f0f0f0;
   width: 130px;
-  
-
 }
 
 header.header .user_nav ul li a {
@@ -110,6 +108,10 @@ header.header .user_nav ul li a {
   border-bottom: 1px solid #d8d8d8;
   color:#333;
   display: block;
+}
+
+header.header .user_nav ul li a:hover {
+  text-decoration:underline;
 }
 
 .avatar {
@@ -151,8 +153,6 @@ footer {
 .image-container{
   width: 300px;          /* コンテナの幅 */
   height: 300px;         /* コンテナの高さ */
-  overflow: hidden;      /* はみ出した部分を隠す */
-  position: relative;
 }
 
 

@@ -1,23 +1,36 @@
 class RatingsController < ApplicationController
-  def new
-    @rating = Rating.new()
+  def index
+    @ratings = Rating.all
+    @rating = Rating.new # 新規作成用のインスタンス
   end
 
   def create
-    
-    if @rating = Rating.create(rating_params)
-      redirect_to new_post_path
+    @rating = Rating.new(rating_params)
+    if @rating.save
+      redirect_to ratings_path, notice: "Rating created successfully"
     else
-      render :new,status: :unprocessable_entitiy
+      render :index, status: :unprocessable_entity
     end
   end
 
-  def edit
+  def update
+    @rating = Rating.find(params[:id])
+    if @rating.update(rating_params)
+      redirect_to ratings_path, notice: "Rating updated successfully"
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @rating = Rating.find(params[:id])
+    @rating.destroy
+    redirect_to ratings_path, notice: "Rating deleted successfully"
   end
 
   private
 
   def rating_params
-    params.require(:rating).permit(:rating_name).merge(user_id: current_user.id)
+    params.require(:rating).permit(:rating_name).merge(user_id:current_user.id)
   end
 end
