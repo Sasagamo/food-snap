@@ -12,21 +12,21 @@
     <%= f.submit "Create Rating" %>
   <% end %>
 
-  <hr>
-
   <!-- 既存のRating一覧 -->
+  <% if @ratings.present? %>
+    <hr>
+    <h3 class="form__title">作成した項目を編集・削除する</h3>
+    <ul class="ratings">
+      <% @ratings.each do |rating| %>
+        <li class="rating_edit">
+          <%= form_with model: rating, local: true, class: "rating_edit_form" do |f| %>
+            <%= f.text_field :rating_name, value: rating.rating_name %>
+            <%= f.submit "Update" %>
+          <% end %>
 
-  <h3 class="form__title">作成した項目を編集・削除する</h3>
-  <ul class="ratings">
-    <% @ratings.each do |rating| %>
-      <li class="rating_edit">
-        <%= form_with model: rating, local: true, class: "rating_edit_form" do |f| %>
-          <%= f.text_field :rating_name, value: rating.rating_name %>
-          <%= f.submit "Update" %>
-        <% end %>
-
-        <%= button_to "Delete", rating_path(rating.id), method: :delete, data: { turbo_method: :delete }, class:"delete_button" %>
-      </li>
-    <% end %>
-  </ul>
+          <%= button_to "Delete", rating_path(rating.id), method: :delete, data: { turbo_method: :delete }, class:"delete_button" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

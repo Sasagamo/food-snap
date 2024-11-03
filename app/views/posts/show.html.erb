@@ -4,13 +4,15 @@
         <div class="post-header">
           <div class="user">
             <%= image_tag @post.user.avatar.attached? ? @post.user.avatar : 'default_avatar.png', class: "user-profile-image" %>
-            <div class="post-info">
-              <div class="username_account-name">
-                <strong class="username"><%= @post.user.nickname %></strong>
-                <span class="account-name">@<%= @post.user.account_name %></span>
+            <%= link_to user_path(@post.user.id) do %>
+              <div class="post-info">
+                <div class="username_account-name">
+                  <strong class="username"><%= @post.user.nickname %></strong>
+                  <span class="account-name">@<%= @post.user.account_name %></span>
+                </div>
+                <span class="post-date"><%= @post.created_at.strftime("%Y年%m月%d日") %></span>              
               </div>
-              <span class="post-date"><%= @post.created_at.strftime("%Y年%m月%d日") %></span>              
-            </div>
+            <% end %>
           </div>          
           <div class="post-genre">
             <span class="prefecture"><%= @post.prefecture.name %></span> <%= " の " %> <span class="genre"><%= @post.genre.name %></span>
@@ -75,7 +77,7 @@
 
     <div class="show-prefecture"></div>
 
-    </main>
+  </main>
   <%= link_to(new_post_path, class: 'post-btn') do %>
   <span class='post-btn-text'>新規投稿</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "post-btn-icon" %>
