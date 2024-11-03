@@ -63,13 +63,18 @@
       </div>
     </div>
 
-    <div class="show-food_images_area">
-      <div class="other-images">
-        <% @post.food_images[0..-1].each do |image| %>          
-            <%= image_tag image, class: "show-food_images" %>
-        <%end%>
+    <% if @post.food_images.present? %>
+      <div class="gallery">ギャラリー</div>
+      <p class="under_line"></p>
+      <div class="show-food_images_area">
+        <div class="other-images">
+          <% @post.food_images[0..-1].each do |image| %>          
+              <%= image_tag image, class: "show-food_images" %>
+          <%end%>
+        </div>
       </div>
-    </div>
+      <p class="over_line"></p>
+    <% end %>
 
 
     <div class="show-prefecture"></div>

@@ -7,7 +7,7 @@
   ; /* ホバー時の文字色 */
 }
 
-.horison:hover .post-detail{
+.horison:hover .post-detail-options{
   display:block;
 }
 
@@ -130,6 +130,7 @@
 
 .post-detail-options {
   list-style:none;
+  display:none;
   z-index: 2;
   width:50px;
   text-align: center;
@@ -137,7 +138,6 @@
 }
 
 .post-detail-options li{
-
   font-size:0.8em;
   cursor:pointer;
 }

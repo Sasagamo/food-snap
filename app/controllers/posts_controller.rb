@@ -6,6 +6,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc)
+    @posts = @posts.where(prefecture_id: params[:prefecture_id]) if params[:prefecture_id].present?
+    @posts = @posts.where(genre_id: params[:genre_id]) if params[:genre_id].present?
   end
 
   def new
@@ -60,7 +62,6 @@ class PostsController < ApplicationController
 
   def check_user
     return if @post.user == current_user
-
     redirect_to root_path
   end
 
