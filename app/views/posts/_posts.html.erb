@@ -1,31 +1,41 @@
-    <% @posts.each do |post| %>
+    <% posts.each do |post| %>
       <div class="horison">
+        <ul class="post-detail-options">
+          <li><%= link_to '詳細', post_path(post.id) %></li>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li><%= link_to '編集', edit_post_path(post) %></li>
+            <li><%= link_to '削除', post_path(post.id), method: :delete, data: { turbo_method: :delete } %></li>
+          <% end %>
+        </ul>
         <div class="post_container">
-          <!-- ヘッダー部分: ユーザ情報と日付 -->
           <div class="post-header">
-            <%= image_tag post.user.avatar.attached? ? post.user.avatar : 'default_avatar.png', class: "user-profile" %>
-            <div class="post-info">
-              <div class="usernames">
-                <strong class="username"><%= post.user.nickname %></strong>
-                <span class="account-name">@<%= post.user.account_name %></span>
-                <span class="post-date"><%= post.created_at.strftime("%Y年%m月%d日") %></span>
-              </div>
+            <div class="user">
+              <%= image_tag post.user.avatar.attached? ? post.user.avatar : 'default_avatar.png', class: "user-profile-image" %>
+              <%= link_to user_path(post.user.id) do %>
+                <div class="post-info">
+                  <div class="username_account-name">
+                    <strong class="username"><%= post.user.nickname %></strong>
+                    <span class="account-name">@<%= post.user.account_name %></span>
+                  </div>
+                  <span class="post-date"><%= post.created_at.strftime("%Y年%m月%d日") %></span>              
+                </div>
+              <% end %>
+            </div>
+            <div class="post-genre">
+              <span class="prefecture"><%= post.prefecture.name %></span> <%= " の " %> <span class="genre"><%= post.genre.name %></span>
             </div>
           </div>
-          
-          <!-- 投稿内容部分 -->
           <%= link_to post_path(post.id) do %>
             <div class="post-content">
-              <!-- メイン画像 -->
               <div class="image-container">
-                <%= image_tag post.store_image.attached? ? post.store_image : 'default_store.png', class:"store-image" %>
+                <%= image_tag post.store_image.attached? ? post.store_image : 'dafault_store.png', class: "store-image" %>
               </div>
 
               <div class="post-text">
-                <div class="store-info">
-                  <div class="post-storename"><%= post.store_name %></div> 
-                  <div class="post-prefecture"><%= post.prefecture.name %></div>
-                </div>
+                <div class="post-storename">
+                  <%= post.store_name %>
+                </div> 
+
                 <div class="post-rating">
                   <% 3.times do |i| %>
                     <% post_rating = post.post_ratings[i] %>
@@ -33,13 +43,31 @@
                       <%= post_rating&.rating&.rating_name || "--未設定--" %>
                     </div>
                     <div class="score">
-                      <%= post_rating&.score || "☆☆☆☆☆" %>
+                      <% if post_rating&.score %>
+                        <% case post_rating.score %>
+                          <% when 1 %>
+                            ★☆☆☆☆
+                          <% when 2 %>
+                            ★★☆☆☆
+                          <% when 3 %>
+                            ★★★☆☆
+                          <% when 4 %>
+                            ★★★★☆
+                          <% when 5 %>
+                            ★★★★★
+                          <% else %>
+                            ☆☆☆☆☆
+                        <% end %>
+                      <% else %>
+                        ☆☆☆☆☆
+                      <% end %>
                     </div>
                   <% end %>
                 </div>
+                
               </div>
             </div>
           <% end %>
-        </div> <!-- .post_container -->
-      </div> <!-- .horison -->
+        </div>
+      </div>
     <% end %>

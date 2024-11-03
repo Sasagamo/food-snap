@@ -24,7 +24,7 @@
   margin-bottom: 10px;
 }
 
-.user-profile {
+.user-profile-image {
   object-fit:cover;
   width:40px;
   height: 40px;
@@ -32,8 +32,9 @@
   margin-right: 5px;
 }
 
-.user-genre{
+.user{
   display:flex;
+  align-items: center;
 }
 
 
@@ -158,4 +159,12 @@
 .genre{
   color:red;
   font-weight: bold;
+}
+
+.username_account-name:hover .username{
+  font-size:1.1em;
+}
+
+.username_account-name:hover{
+  border-bottom:3px solid orange;
 }
