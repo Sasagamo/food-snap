@@ -15,18 +15,6 @@
   border-bottom: 1px solid #a7aaaa;;
 }
 
-.show-user-profile {
-  object-fit:cover;
-  width:40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.show-post-info {
-  display: flex;
-  flex-direction: column;
-}
 
 .show-usernames {
   display: flex; /* ユーザーネームとアカウントネームを横並びに */

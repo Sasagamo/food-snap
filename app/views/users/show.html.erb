@@ -1,0 +1,36 @@
+<div class="page-info"> <%= @user.nickname %> のマイページ</div> 
+
+<p class="over_line"></p>
+  <div class="user_profile">
+    <div class="user_show">
+      <%= image_tag @user.avatar.attached? ? @user.avatar : 'default_avatar.png', class: "user-profile-image-show" %>
+      <%= link_to user_path(@user.id) do %>
+        <div class="post-info">
+          <div class="username_account-name-show">
+            <strong class="username-"><%= @user.nickname %></strong>
+            <span class="account-name-show">@<%= @user.account_name %></span>
+          </div>
+        </div>
+      <% end %>
+      <span class="user-date"><%= @user.created_at.strftime("%Y年%m月%d日")+"に登録したユーザーです" %></span>
+      <% if @user.bio.present?%>
+        <div class="user_bio"><%= @user.bio %></div>
+      <% end %>
+      <% if user_signed_in? %>        
+        <% if @user == current_user %>
+          <div class="edit_profile">
+            <%= link_to 'プロフィールを編集する', edit_user_path(@user.id) %>
+          </div>          
+        <% end %>
+      <% end %>
+    </div>
+
+
+  </div>
+<p class="under_line"></p>
+
+<% if @user.posts.present? %>
+  <h3 class="form__title"><%= @user.nickname+"の投稿一覧" %></h3>
+  <%= render partial: 'posts/posts',locals:{ posts:@user.posts} %>
+<% end %>
+

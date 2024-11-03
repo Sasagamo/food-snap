@@ -1,0 +1,16 @@
+      <div class="searchbar">
+        <div class="searchbar_header">検索バー</div>
+        <%= form_with url: posts_path, method: :get, local: true do %>
+          <div>
+            <%= label_tag :prefecture_id, "都道府県" %>
+            <%= select_tag :prefecture_id, options_for_select(Prefecture.pluck(:name, :id), params[:prefecture_id]), include_blank: 'すべて' %>
+          </div>
+          <div>
+            <%= label_tag :genre_id, "ジャンル" %>
+            <%= select_tag :genre_id, options_for_select(Genre.pluck(:name, :id), params[:genre_id]), include_blank: 'すべて' %>
+          </div>
+          <div class="submit-container">
+            <%= submit_tag "検索", class: "btn" %>
+          </div>
+        <% end %>
+      </div>

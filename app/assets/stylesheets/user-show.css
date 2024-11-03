@@ -1,0 +1,46 @@
+.user_show{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username_account-name-show{
+  font-size: 2em;
+}
+
+.account-name-show {
+  color: #657786;
+  font-size: 28px;
+  margin-right: 8px; /* 日付との間にスペース */
+}
+
+.user-profile-image-show{
+  object-fit:cover;
+  width:160px;
+  height: 160px;
+  border-radius: 50%;
+  margin:20px 0 5px 0;
+  border:1px solid #a7aaaa;
+}
+
+.user_bio{
+  width:60%;
+  border:2px solid #a7aaaa;
+  border-radius: 4px;
+  margin-top:10px;
+  font-size:1.2em;
+  padding:5px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.edit_profile{
+  width:50%;
+  text-align:right;
+  margin-bottom:5px;
+  font-size:0.8em;
+}
+
+.edit_profile:hover a{
+  text-decoration: underline;
+}

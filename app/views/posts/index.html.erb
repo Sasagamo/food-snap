@@ -2,111 +2,19 @@
   <main class="main-content">
     <!-- メインコンテンツの内容 --> 
     <div class="titlebar">
-      <div class="page-info">
-        みんなの投稿      
-      </div> 
+      <div class="page-info">みんなの投稿</div> 
+
       <%# 検索バー %>
-      <div class="searchbar">
-      <div class="searchbar_header">検索バー</div>
-        <%= form_with url: posts_path, method: :get, local: true do %>
-        <div>
-          <%= label_tag :prefecture_id, "都道府県" %>
-          <%= select_tag :prefecture_id, options_for_select(Prefecture.pluck(:name, :id), params[:prefecture_id]), include_blank: 'すべて' %>
-        </div>
-        <div>
-          <%= label_tag :genre_id, "ジャンル" %>
-          <%= select_tag :genre_id, options_for_select(Genre.pluck(:name, :id), params[:genre_id]), include_blank: 'すべて' %>
-        </div>
-        <div class="submit-container">
-          <%= submit_tag "検索", class: "btn" %>
-        </div>
-      <% end %>
-      </div>  
+      <%= render partial: 'searchbar' %>
+
     </div>
 
-    <% @posts.each do |post| %>
-    <div class="horison">
-        <ul class="post-detail-options">
-          <li><%= link_to '詳細', post_path(post.id) %></li>
-          <% if user_signed_in? && current_user.id == post.user_id %>
-            <li><%= link_to '編集', edit_post_path(post) %></li>
-            <li><%= link_to '削除', post_path(post.id), method: :delete, data: { turbo_method: :delete } %></li>
-          <% end %>
-        </ul>
-      <div class="post_container">
-        <!-- ヘッダー部分: ユーザ情報と日付 -->
+    <%# ポスト一覧 %>
+    <%= render partial: 'posts',locals:{ posts:@posts} %>
 
-        <div class="post-header">
-          <div class="user-genre">
-            <%= image_tag post.user.avatar.attached? ? post.user.avatar : 'default_avatar.png', class: "user-profile" %>
-            <div class="post-info">              
-              <strong class="username"><%= post.user.nickname %></strong>
-              <span class="account-name">@<%= post.user.account_name %></span>
-              <span class="post-date"><%= post.created_at.strftime("%Y年%m月%d日") %></span>              
-            </div>
-          </div>          
-          <div class="post-genre">
-            <span class="prefecture"><%= post.prefecture.name %></span> <%= " の " %> <span class="genre"><%= post.genre.name %></span>
-          </div>          
-        </div>        
-        <!-- 投稿内容部分 -->
-        <%= link_to post_path(post.id) do %>
-          <div class="post-content">
-            <!-- メイン画像 -->
-            <div class="image-container">
-              <%= image_tag post.store_image.attached? ? post.store_image : 'dafault_store.png', class:"store-image" %>
-            </div>
-
-            <div class="post-text">
-              <div class="post-storename">
-                <%= post.store_name %>
-              </div> 
-
-              <%# 後で切り出す %>
-              <div class="post-rating">
-                <% 3.times do |i| %>
-                  <% post_rating = post.post_ratings[i] %>
-                  
-                  <div class="rating">
-                    <%= post_rating&.rating&.rating_name || "--未設定--" %>
-                  </div>
-                  
-                  <%# 後で切り出す %>
-                  <div class="score">
-                    <% if post_rating&.score %>
-                      <% case post_rating.score %>
-                        <% when 1 %>
-                          ★☆☆☆☆
-                        <% when 2 %>
-                          ★★☆☆☆
-                        <% when 3 %>
-                          ★★★☆☆
-                        <% when 4 %>
-                          ★★★★☆
-                        <% when 5 %>
-                          ★★★★★
-                        <% else %>
-                          ☆☆☆☆☆
-                      <% end %>
-                    <% else %>
-                      ☆☆☆☆☆
-                    <% end %>
-                  </div>
-                <%# 後で切り出す %>
-
-                <% end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-
-      </div>
-      </div>
-    <% end %>
   </main>
   <%= link_to(new_post_path, class: 'post-btn') do %>
-  <span class='post-btn-text'>新規投稿</span>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "post-btn-icon" %>
+    <span class='post-btn-text'>新規投稿</span>
+    <%= image_tag 'icon_camera.png', size: '185x50', class: "post-btn-icon" %>
   <% end %>
 </div>
-
