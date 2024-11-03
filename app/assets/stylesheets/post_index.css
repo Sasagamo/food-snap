@@ -16,7 +16,7 @@
 
 .page-info{
   font-size: 30px;
-  width: 220px;
+  display:inline-block;
   border: 5px solid rgb(223, 131, 11);
   border-radius: 5%;
   padding: 10px; /* 適切な数値を設定 */
@@ -37,4 +37,27 @@
 
 .score{
   color:orange;
+}
+
+.searchbar .btn{
+  display:inline-block;
+  width:40px;
+  cursor: pointer;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center; 
+  width:100%;
+}
+
+.searchbar_header {
+  text-align: center; 
+  font-size: 18px; 
+}
+
+.searchbar{
+  border:1px solid #a7aaaa;
+  padding:5px 10px;
+  border-radius: 4px;
 }
