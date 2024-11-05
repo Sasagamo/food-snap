@@ -1,7 +1,7 @@
 class RatingsController < ApplicationController
   def index
-    @ratings = Rating.all
-    @rating = Rating.new # 新規作成用のインスタンス
+    @ratings = Rating.where(user_id:current_user.id)
+    @rating = Rating.new 
   end
 
   def create
