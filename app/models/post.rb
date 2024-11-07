@@ -8,12 +8,11 @@ class Post < ApplicationRecord
 
   attr_accessor :rating_id_1, :score_1, :rating_id_2, :score_2, :rating_id_3, :score_3
 
-  validates :store_name, presence: true
+  validates :store_name, presence: true,length: { maximum: 30 }
   validates :store_image, content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 5.megabytes } 
   validates :food_images,  content_type: ['image/png', 'image/jpg', 'image/jpeg'], size: { less_than: 3.megabytes }
-
   validate :validate_post_ratings
-
+  
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture

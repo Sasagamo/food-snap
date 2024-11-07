@@ -12,7 +12,7 @@
     <%# ポスト一覧 %>
     <%= render partial: 'posts',locals:{ posts:@posts} %>
 
-  </main>
+</main> 
   <%= link_to(new_post_path, class: 'post-btn') do %>
     <span class='post-btn-text'>新規投稿</span>
     <%= image_tag 'icon_camera.png', size: '185x50', class: "post-btn-icon" %>

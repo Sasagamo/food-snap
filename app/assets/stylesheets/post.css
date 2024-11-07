@@ -107,6 +107,7 @@
   font-size:20px;
   font-weight:bold;
   margin-right:10px;
+  white-space: nowrap;
   
 
 }
@@ -169,3 +170,5 @@
 .username_account-name:hover{
   border-bottom:3px solid orange;
 }
+
+
