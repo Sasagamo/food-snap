@@ -141,7 +141,7 @@ belongs_to :follower, class_name:User
 
 
 
-## locations テーブル  ※現在は未実装
+## locations テーブル　　※現在は未実装
 
 | Column    | Type       | Options |
 | ----------| ---------- | ------- |
