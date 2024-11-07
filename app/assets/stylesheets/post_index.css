@@ -1,16 +1,16 @@
 .main_container {
-  display: flex; /* フレックスボックスを使用して横並びにする */
+  display: flex; 
 }
 
 .sidebar {
-  width: 200px; /* サイドバーの幅 */
-  background-color: #f4f4f4; /* サイドバーの背景色 */
-  padding: 15px; /* サイドバーの内側の余白 */
+  width: 200px; 
+  background-color: #f4f4f4; 
+  padding: 15px; 
 }
 
 .main-content {
-  flex-grow: 1; /* メインコンテンツエリアが残りのスペースを占有 */
-  padding: 15px; /* メインコンテンツの内側の余白 */
+  flex-grow: 1; 
+  padding: 15px; 
   height:100%;
 }
 
@@ -19,9 +19,9 @@
   display:inline-block;
   border: 5px solid rgb(223, 131, 11);
   border-radius: 5%;
-  padding: 10px; /* 適切な数値を設定 */
+  padding: 10px; 
   margin: 5px 30px;
-  text-align: center; /* テキストを中央揃えにする */
+  text-align: center; 
   height: fit-content;
 }
 

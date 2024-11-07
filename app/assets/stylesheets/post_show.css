@@ -1,11 +1,11 @@
-/* 全体のスタイル */
+
 .show_main_container {
-  max-width: 800px; /* コンテンツの最大幅 */
-  margin: 0 auto; /* 中央揃え */
-  padding: 20px; /* 内側の余白 */
-  background-color: #f9f9f9; /* 背景色 */
-  border-radius: 8px; /* 角を丸める */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* シャドウ */
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 20px; 
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .show-post-header {
@@ -17,13 +17,13 @@
 
 
 .show-usernames {
-  display: flex; /* ユーザーネームとアカウントネームを横並びに */
-  align-items: center; /* 縦方向の中央揃え */
+  display: flex; 
+  align-items: center; 
 }
 
 .show-username {
   font-size: 16px;
-  margin-right: 8px; /* アカウントネームとの間にスペース */
+  margin-right: 8px; 
 }
 
 .show-account-name {
@@ -39,92 +39,92 @@
 
 /* 店舗画像のスタイル */
 .show-store_image {
-  text-align: center; /* 中央揃え */
-  margin-bottom: 20px; /* 下の余白 */
+  text-align: center; 
+  margin-bottom: 20px; 
 }
 
 .show-store_image img {
-  max-width: 100%; /* 画像の最大幅を100%に */
-  height: auto; /* 高さを自動調整 */
-  border-radius: 8px; /* 角を丸める */
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
 }
 
 /* 店名のスタイル */
 h2 {
-  font-size: 24px; /* フォントサイズ */
-  margin-bottom: 10px; /* 下の余白 */
+  font-size: 24px; 
+  margin-bottom: 10px; 
 }
 
 /* 評価エリアのスタイル */
 .rating_area {
-  display: flex; /* フレックスボックスで左右に並べる */
-  justify-content: space-between; /* スペースを均等に */
-  margin-bottom: 20px; /* 下の余白 */
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 20px; 
 }
 
 .left_area {
-  flex: 1; /* 左側をフレックスアイテムとして伸ばす */
-  margin-right: 20px; /* 右側との余白 */
+  flex: 1; 
+  margin-right: 20px; 
   margin-left: 30px;
 }
 
 .right_area {
-  flex: 1; /* 右側をフレックスアイテムとして伸ばす */
+  flex: 1; 
   margin-right:30px;
 }
 
 /* 評価のスタイル */
 .show-rating {
-  margin-bottom: 10px; /* 下の余白 */
+  margin-bottom: 10px; 
 }
 
 .show-rating-name {
-  font-weight: bold; /* 太字 */
-  color: #333; /* 色 */
+  font-weight: bold; 
+  color: #333; 
 }
 
 .show-score-name {
-  color: #ffcc00; /* 星の色 */
-  font-size: 18px; /* フォントサイズ */
+  color: #ffcc00; 
+  font-size: 18px; 
 }
 
 /* メモのスタイル */
 .right_area p {
-  background-color: #eef; /* メモの背景色 */
-  padding: 10px; /* 内側の余白 */
-  border-radius: 4px; /* 角を丸める */
+  background-color: #eef; 
+  padding: 10px; 
+  border-radius: 4px; 
   height:100%;
 }
 
 /* 食品画像のスタイル */
 .show-food_images {
-  display: flex; /* フレックスボックス */
-  gap: 10px; /* アイテム間の隙間 */
+  display: flex; 
+  gap: 10px; 
 }
 
 /* Googleマップのスタイル */
 .show-google_map {
-  margin-top: 20px; /* 上の余白 */
-  height: 300px; /* 高さを固定 */
-  background-color: #ddd; /* 背景色（地図が表示される場所） */
+  margin-top: 20px; 
+  height: 300px; 
+  background-color: #ddd; 
 }
 
 /* 都道府県のスタイル */
 .show-prefecture {
-  margin-top: 20px; /* 上の余白 */
-  font-size: 16px; /* フォントサイズ */
-  color: #666; /* 色 */
+  margin-top: 20px; 
+  font-size: 16px; 
+  color: #666; 
 }
 
 .show-food_images{
-  max-height: 300px; /* 画像の最大高さを100pxに制限 */
-  display: inline-block; /* 画像をインラインブロック要素として表示 */
+  max-height: 300px; 
+  display: inline-block; 
 }
 
 .other-images{
-  overflow-x: auto; /* 横方向にオーバーフローが発生した場合、スクロールバーを表示 */
-  white-space: nowrap; /* 画像を横に並べるために必要 */
-  cursor: grab; /* マウスカーソルを変更 */
+  overflow-x: auto; 
+  white-space: nowrap; 
+  cursor: grab; 
 
 }
 

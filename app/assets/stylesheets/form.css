@@ -9,51 +9,49 @@
 .store_preview-image{
   height: 100px;
   width: 100px;
-  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
   object-fit: cover;
 }
 
 .food_preview-image{
   height: 100px;
   width: 100px;
-  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
   object-fit: cover;
 }
 
 .post-form {
-  background-color: #ffffff; /* 背景色 */
-  padding: 20px; /* パディング */
-  border-radius: 8px; /* 角丸 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* シャドウ効果 */
+  background-color: #ffffff; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   max-width: 800px;
   margin:0 auto;
   
 }
 
 .post-form__title {
-  font-size: 1.5em; /* タイトルのフォントサイズ */
-  margin-bottom: 15px; /* タイトル下のマージン */
+  font-size: 1.5em; 
+  margin-bottom: 15px; 
 }
 
 .post-form__field {
-  margin-bottom: 15px; /* フィールド間のマージン */
+  margin-bottom: 15px; 
   align-items:center;
 }
 
 .post-form__label {
-  display: block; /* ブロック要素として表示 */
-  font-weight: bold; /* 太字 */
-  color: #333; /* 文字色 */
+  display: block; 
+  font-weight: bold; 
+  color: #333;
   white-space: nowrap;
 }
 
 .post-form__input,
 .post-form__textarea{
-  width: 100%; /* 幅を100%に設定 */
-  padding: 10px; /* パディング */
-  border: 1px solid #ccc; /* 枠線 */
-  border-radius: 4px; /* 角丸 */
-  font-size: 1em; /* フォントサイズ */
+  width: 100%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 1em; 
 }
 
 .post-form__select{
@@ -78,21 +76,21 @@
 
 
 .post-form__textarea {
-  resize: vertical; /* 縦方向にリサイズ可能 */
+  resize: vertical; 
 }
 
 .post-form__submit {
-  background-color: #28a745; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: none; /* 枠線なし */
-  padding: 10px 15px; /* パディング */
-  border-radius: 5px; /* 角丸 */
-  cursor: pointer; /* カーソルをポインターに */
-  font-size: 1em; /* フォントサイズ */
+  background-color: #28a745; 
+  color: white; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 1em; 
 }
 
 .post-form__submit:hover {
-  background-color: #218838; /* ホバー時の背景色 */
+  background-color: #218838; 
 }
 
 .food_image-delete-button {
@@ -112,11 +110,11 @@
 }
 
 .post-form__image-area label {
-  display: block; /* ラベルをブロック要素として表示 */
-  margin-bottom: 5px; /* ラベル下のマージン */
-  font-weight: bold; /* 太字 */
-  color: #333; /* 文字色 */
-  font-family: Arial, sans-serif; /* フォントファミリーをArialに設定 */
+  display: block; 
+  margin-bottom: 5px; 
+  font-weight: bold; 
+  color: #333; 
+  font-family: Arial, sans-serif; 
 }
 
 .post-form__image-area{

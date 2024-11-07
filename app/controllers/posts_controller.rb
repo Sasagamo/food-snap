@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       create_post_ratings(@post)
-      redirect_to root_path, notice: '投稿が成功しました。'
+      redirect_to root_path
     else
       render :new ,status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def edit
     @post.post_ratings.each_with_index do |rating, index|
-      if index < 3  # 最大3つの評価があると仮定
+      if index < 3 
         @post.send("rating_id_#{index + 1}=", rating.rating_id)
         @post.send("score_#{index + 1}=", rating.score)
       end
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def update 
     if @post.update(post_params)
       update_post_ratings(@post)
-      redirect_to root_path, notice: '編集が成功しました。'
+      redirect_to root_path
     else
       render :edit ,status: :unprocessable_entity
     end

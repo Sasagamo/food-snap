@@ -1,75 +1,75 @@
 /* 新規作成用フォームのスタイル */
 .new_rating_form {
-  background-color: #fff; /* フォームの背景色 */
-  border: 1px solid #ddd; /* ボーダー */
-  border-radius: 4px; /* 角を丸める */
-  padding: 15px; /* パディング */
-  margin-bottom: 20px; /* 下のマージン */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 影を追加 */
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
+  padding: 15px; 
+  margin-bottom: 20px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   display: flex;
   align-items: center;
 }
 
-/* 新規作成用フォーム内の入力フィールド */
+
 .new_rating_form input[type="text"] {
-  width: calc(100% - 22px); /* 幅を調整 */
-  padding: 10px; /* 内側のパディング */
-  margin: 5px 0; /* マージン */
-  border: 1px solid #ccc; /* ボーダー */
-  border-radius: 4px; /* 角を丸める */
+  width: calc(100% - 22px); 
+  padding: 10px; 
+  margin: 5px 0; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
 }
 
-/* 新規作成用フォーム内のボタン */
+
 .new_rating_form input[type="submit"] {
-  background-color: #f09116; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: none; /* ボーダーなし */
-  padding: 10px 15px; /* パディング */
-  border-radius: 4px; /* 角を丸める */
-  cursor: pointer; /* ポインターをカーソルに */
-  transition: background-color 0.3s; /* ホバー時の遷移 */
+  background-color: #f09116; 
+  color: white; 
+  border: none; 
+  padding: 10px 15px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
   margin-left: 5px;
 }
 
 .new_rating_form input[type="submit"]:hover {
-  background-color: #ff6f61; /* ホバー時の色 */
+  background-color: #ff6f61; 
 }
 
 /* Rating編集用フォームのスタイル */
 .rating_edit_form {
-  background-color: #fff; /* フォームの背景色 */
-  border-radius: 4px; /* 角を丸める */
-  padding: 10px; /* パディング */
+  background-color: #fff; 
+  border-radius: 4px; 
+  padding: 10px; 
   width:100%;
   display: flex;
   align-items: center;
 
 }
 
-/* Rating編集用フォーム内の入力フィールド */
+
 .rating_edit_form input[type="text"] {
-  width: calc(100% - 22px); /* 幅を調整 */
-  padding: 5px; /* 内側のパディング */
-  margin: 5px 0; /* マージン */
-  border: 1px solid #ccc; /* ボーダー */
-  border-radius: 4px; /* 角を丸める */
+  width: calc(100% - 22px); 
+  padding: 5px; 
+  margin: 5px 0; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
 }
 
 /* Rating編集用フォーム内のボタン */
 .rating_edit_form input[type="submit"] {
-  background-color: #f09116; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: none; /* ボーダーなし */
-  padding: 0px 10px; /* パディング */
-  border-radius: 4px; /* 角を丸める */
-  cursor: pointer; /* ポインターをカーソルに */
-  transition: background-color 0.3s; /* ホバー時の遷移 */
+  background-color: #f09116; 
+  color: white; 
+  border: none; 
+  padding: 0px 10px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
   margin-left:5px;
   height:24px;
 }
 
 .rating_edit_form input[type="submit"]:hover {
-  background-color: #ff6f61; /* ホバー時の色 */
+  background-color: #ff6f61; 
 }
 
 .ratings_container{
@@ -83,25 +83,25 @@
 }
 
 .delete_button{
-  background-color: #f09116; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: none; /* ボーダーなし */
-  padding: 5px 10px; /* パディング */
-  border-radius: 4px; /* 角を丸める */
-  cursor: pointer; /* ポインターをカーソルに */
-  transition: background-color 0.3s; /* ホバー時の遷移 */
+  background-color: #f09116; 
+  color: white; 
+  border: none; 
+  padding: 5px 10px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
   margin-right:10px;
   height:24px;
 }
 
 .delete_button:hover{
-  background-color: #ff6f61; /* ホバー時の色 */
+  background-color: #ff6f61; 
 }
 
 .rating_edit{
-  background-color: #fff; /* フォームの背景色 */
-  border: 1px solid #ddd; /* ボーダー */
-  border-radius: 4px; /* 角を丸める */
+  background-color: #fff; 
+  border: 1px solid #ddd; 
+  border-radius: 4px; 
   margin-bottom: 5px;
   align-items: center;
 }

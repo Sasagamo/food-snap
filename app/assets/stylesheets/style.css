@@ -25,14 +25,14 @@ body {
 
 /* ヘッダー */
 header {
-  background-color: #f7b162; /* ヘッダーの背景色 */
-  padding: 15px 70px; /* ヘッダー内の余白 */
+  background-color: #f7b162;
+  padding: 15px 70px;
 }
 
 .header__bar {
   display: flex;
-  justify-content: space-between; /* ヘッダーの左右を均等に配置 */
-  align-items: center; /* 縦中央に配置 */
+  justify-content: space-between;
+  align-items: center; 
 }
 
 .header .logo {
@@ -40,19 +40,19 @@ header {
 }
 
 .header a {
-  text-decoration: none; /* リンクの下線を消す */
-  color: white; /* リンクの文字色 */
+  text-decoration: none; 
+  color: white; 
 }
 
 .user_nav {
   display: flex;
-  align-items: center; /* 縦中央に配置 */
+  align-items: center; 
 }
 
 .name-and-image {
   display: flex;
-  align-items: center; /* 縦中央に配置 */
-  margin-right: 20px; /* 名前と画像の間隔 */
+  align-items: center;
+  margin-right: 20px; 
   position: relative;
   width:172px;
   color:white;
@@ -123,43 +123,54 @@ header.header .user_nav ul li a:hover {
 }
 
 .user__info {
-  list-style: none; /* リストのスタイルを消す */
+  list-style: none; 
 }
 
 
 
 .post {
-  background-color: #f09116; /* ボタンの背景色 */
-  color: white; /* ボタンの文字色 */
-  border: 2px solid #fdfdfd; /* ボタンのボーダー色 */
-  padding: 10px 15px; /* ボタン内の余白 */
-  border-radius: 5px; /* ボタンの角を丸くする */
-  text-decoration: none; /* ボタンの下線を消す */
+  background-color: #f09116; 
+  color: white; 
+  border: 2px solid #fdfdfd; 
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  text-decoration: none; 
 }
 
 .post:hover {
-  background-color: #ff6f61; /* ホバー時の背景色 */
-  color: white; /* ホバー時の文字色 */
+  background-color: #ff6f61; 
+  color: white; 
 }
 
 /* フッター */
 footer {
-  text-align: center; /* フッター内のテキストを中央揃え */
-  padding: 20px 0; /* フッターの上下の余白 */
-  background-color: #f7b162; /* フッターの背景色 */
-  color: white; /* フッターの文字色 */
+  text-align: center; 
+  padding: 20px 0; 
+  background-color: #f7b162; 
+  color: white; 
 }
 
 .image-container{
-  width: 300px;          /* コンテナの幅 */
-  height: 300px;         /* コンテナの高さ */
+  width: 300px;     
+  height: 300px;       
 }
 
+/* エラーメッセージ全体のスタイル */
+.error-alert {
+  background-color: #f8d7da;  /* 明るい赤色 */
+  color: #721c24;  /* ダークな赤色のテキスト */
+  border: 1px solid #f5c6cb;  /* 薄い赤色の境界線 */
+  padding: 15px;  /* 内側の余白 */
+  border-radius: 5px;  /* 角を丸くする */
+  margin-bottom: 20px;  /* 下部に余白を追加 */
+  font-family: Arial, sans-serif;  /* フォントの設定 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* 軽いシャドウを追加 */
+}
 
-
-
-
-
-
-
-
+/* 各エラーメッセージのリスト項目のスタイル */
+.error-message {
+  list-style-type: none;  /* 項目番号を非表示 */
+  font-size: 14px;  /* フォントサイズの設定 */
+  line-height: 1.5;  /* 行間の設定 */
+  margin: 5px 0;  /* 各メッセージの上下の間隔を調整 */
+}
