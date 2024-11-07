@@ -1,4 +1,4 @@
-# アプリケーション名
+## アプリケーション名
 
 FoodSnap
 
@@ -105,7 +105,7 @@ FoodSnap
 - has_many :followers, class_name: "Relationship", foreign_key: "following"
 - has_one_attached :avatar
 
-## relationships テーブル
+## relationships テーブル　　※現在は未実装
 
 | Column    | Type       | Options           |
 | --------- | ---------- | ----------------- |
@@ -141,7 +141,7 @@ belongs_to :follower, class_name:User
 
 
 
-## locations テーブル
+## locations テーブル  ※現在は未実装
 
 | Column    | Type       | Options |
 | ----------| ---------- | ------- |
@@ -171,7 +171,7 @@ belongs_to :follower, class_name:User
 
 | Column      | Type       | Options                        |
 | ----------- | ---------- | -------------------------------|
-| rating_name | string     | null: false, 初期値として 美味しさ(id 1)、価格(id 2)、アクセス(id 3) を設定 |
+| rating_name | string     | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
 ### Association
