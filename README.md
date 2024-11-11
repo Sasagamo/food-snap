@@ -8,8 +8,6 @@ FoodSnap
 
 ## URL
 
-※2024/11/08画像のリンク切れについて対応中
-
 [https://food-snap.onrender.com](https://food-snap.onrender.com) 
 
 
