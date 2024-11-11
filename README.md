@@ -8,7 +8,11 @@ FoodSnap
 
 ## URL
 
+※2024/11/08画像のリンク切れについて対応中
+
 [https://food-snap.onrender.com](https://food-snap.onrender.com) 
+
+
 
 ## テスト用アカウント
 ※現在ユーザーの退会機能は実装されていません、必要であれば以下のアカウントをお使いください。
