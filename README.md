@@ -11,8 +11,8 @@ FoodSnap
 [https://food-snap.onrender.com](https://food-snap.onrender.com) 
 
 ## BASIC認証
-ID:sasagamo
-password:4312
+- ID: sasagamo
+- password: 4312
 
 ## テスト用アカウント
 ※現在ユーザーの退会機能は実装されていません、必要であれば以下のアカウントをお使いください。
